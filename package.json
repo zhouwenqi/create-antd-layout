@@ -1,0 +1,53 @@
+{
+  "name": "create-antd-layout",
+  "version": "1.2.6",
+  "description": "this is create project for @adminui-dev/antd-layout's template proejct",
+  "keywords": [
+    "create-antd-layout",
+    "antd-layout"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "author": "zhouwenqi",
+  "bin": {
+    "create-antd-layout": "./bin/index.js"
+  },
+  "files": [
+    "bin",
+    "templates"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhouwenqi/create-antd-layout.git"
+  },
+  "homepage": "https://demo.adminui.dev",
+  "scripts": {
+    "build": "tsc",
+    "bw": "tsc -w",
+    "dev": "ts-node src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^12.1.0",
+    "degit": "^2.8.4",
+    "execa": "^9.5.1",
+    "fs-extra": "^11.0.0",
+    "inquirer": "^9.2.15",
+    "ora": "^8.1.0"
+  },
+  "devDependencies": {
+    "@types/degit": "^2.8.6",
+    "@types/fs-extra": "^11.0.4",
+    "@types/inquirer": "^9.0.7",
+    "@types/node": "^20.14.0",
+    "@types/ora": "^3.2.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
