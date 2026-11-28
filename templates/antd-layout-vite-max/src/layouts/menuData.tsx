@@ -42,4 +42,4 @@ const menuData:MenuData = {
         ]},
     ]
 }
-export default menuData
+export { menuData }

@@ -1,31 +1,11 @@
 import { BrandPopoverPanel, UserPopoverPanel } from "@/components/PopoverPanel"
 import { ThemeButton } from "@/components/ThemeButton"
 import { AntdLayout } from "@adminui-dev/antd-layout"
-import type { LayoutConfig, LocaleMessage } from "@adminui-dev/antd-layout"
-import menuData from "./menuData"
-import WardenLogo from "@/components/WardenLogo"
-import antdZhCN from 'antd/locale/zh_CN'
-import antdEnUS from 'antd/locale/en_US'
-import zhCN from "@/locales/zh-CN"
-import enUS from "@/locales/en-US"
+import { menuData } from "./menuData"
 import { LanguageButton } from "@/components/LanguageButton"
+import { layoutConfig } from "./layout.config"
+import { localeMessages } from "./localeMessages"
 
-const localeMessages:Record<string,LocaleMessage> = {   
-    "zh-CN":{
-        locale:antdZhCN.locale,
-        name:"简体中文",
-        flag:"🇨🇳",
-        messages:zhCN,            
-        antdLocale:antdZhCN
-    },
-    "en-US":{
-        locale:antdEnUS.locale,
-        name:"English",
-        flag:"🇺🇸",
-        messages:enUS,
-        antdLocale:antdEnUS
-    },
-}
 /**
  * =========
  *  layout
@@ -34,25 +14,7 @@ const localeMessages:Record<string,LocaleMessage> = {
  * 
  * @returns 
  */
-export default function(){      
-    // layout config
-    const layoutConfig:LayoutConfig = {
-        layoutType:"leftMenu",  
-        asideMenuInline:true,
-        hideAsideMenuDataEmpty:true,
-        largeBrand:true,    
-        brandInfo:{
-            logo:<WardenLogo />,
-            name:"Warden.vip",
-            title:"Web build frameworks"
-        },
-        userInfo:{
-            uid:"Scapegoat",
-            title:"zhouwenqi@me.com",
-            avatar:"https://api.dicebear.com/9.x/miniavs/svg?seed=8"
-        }
-    }
-
+export default function(){ 
     return(
         <>
             <AntdLayout layoutConfig={layoutConfig} menuData={menuData} localeMessages={localeMessages}>

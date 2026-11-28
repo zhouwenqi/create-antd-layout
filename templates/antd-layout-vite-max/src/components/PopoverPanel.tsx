@@ -124,15 +124,15 @@ function UserPopoverPanel(){
             </div>
             <Divider style={{marginTop:"12px",marginBottom:"4px"}} />
             
-            <Button onClick={onProfileHandler} type="text" block icon={<ContactRound size={14} />} styles={{root:btnRootStyle}}>Profile</Button>            
-            <Button onClick={onClickHandler} type="text" block icon={<Siren size={14} />} styles={{root:btnRootStyle}}>Notice</Button>         
-            <Button onClick={onClickHandler} type="text" block icon={<CircleUserRound size={14} />} styles={{root:btnRootStyle}}>Account</Button>
-            <Button onClick={onClickHandler} type="text" block icon={<BrushCleaning size={14} />} styles={{root:btnRootStyle}}><div style={{display:"flex",width:"100%",justifyContent:"space-between",alignItems:"center"}}>Cache clean<Tag color="warning" icon={<CircleAlert size={14} />}>2.8G</Tag></div></Button>            
+            <Button onClick={onProfileHandler} type="text" block icon={<ContactRound size={14} />} styles={{root:btnRootStyle}}>{intl.formatMessage({id:"profile.popover.profile"})}</Button>            
+            <Button onClick={onClickHandler} type="text" block icon={<Siren size={14} />} styles={{root:btnRootStyle}}>{intl.formatMessage({id:"profile.popover.notice"})}</Button>         
+            <Button onClick={onClickHandler} type="text" block icon={<CircleUserRound size={14} />} styles={{root:btnRootStyle}}>{intl.formatMessage({id:"profile.popover.account"})}</Button>
+            <Button onClick={onClickHandler} type="text" block icon={<BrushCleaning size={14} />} styles={{root:btnRootStyle}}><div style={{display:"flex",width:"100%",justifyContent:"space-between",alignItems:"center"}}>{intl.formatMessage({id:"profile.popover.cacheclean"})}<Tag color="warning" icon={<CircleAlert size={14} />}>2.8G</Tag></div></Button>            
             <Divider style={{marginTop:"4px",marginBottom:"4px"}} />
             <Space style={{marginBottom:"0px"}} separator={<Divider orientation="vertical" />}>
-                <Button onClick={onClickHandler} type="text" block icon={<Crown size={14} />} styles={{root:btnRootStyle}}>Upgrade pro</Button>
+                <Button onClick={onClickHandler} type="text" block icon={<Crown size={14} />} styles={{root:btnRootStyle}}>{intl.formatMessage({id:"profile.popover.upgrade"})}</Button>
                 <Popconfirm onConfirm={confirmHandler} title={intl.formatMessage({id:"profile.logout.confirm.title"})} description={intl.formatMessage({id:"profile.logout.confirm.description"})}>
-                    <Button type="text" block icon={<LogOut size={14} />} styles={{root:btnRootStyle}}>Logout</Button>
+                    <Button type="text" block icon={<LogOut size={14} />} styles={{root:btnRootStyle}}>{intl.formatMessage({id:"profile.popover.logout"})}</Button>
                 </Popconfirm>                
             </Space>                      
         </div>
@@ -154,6 +154,7 @@ const btnContentStyle:React.CSSProperties = {
 function BrandPopoverPanel(){
     const { close } = useBrandPopover()
     const {token} = useToken()
+    const intl = useIntl()
     const brandTeams:BrandTeam[] = [    
         {id:1,name:"AIM-120",logo:"https://api.dicebear.com/9.x/bottts-neutral/svg?seed=AIM-120"},
         {id:2,name:"AGM-86A",logo:"https://api.dicebear.com/9.x/bottts-neutral/svg?seed=AGM-86A"},
@@ -167,11 +168,11 @@ function BrandPopoverPanel(){
     })
     return(
         <div style={boxStyles}>
-            <h4 style={{margin:"0px"}}>Teams</h4>
+            <h4 style={{margin:"0px"}}>{intl.formatMessage({id:"brand.popover.title"})}</h4>
             <Divider style={{marginTop:"10px",marginBottom:"4px"}} />     
             {items}         
             <Divider style={{marginTop:"4px",marginBottom:"4px"}} />
-            <Button onClick={()=>{close!()}} type="text" block icon={<Plus size={14} />} styles={{root:btnRootStyle}}>Create team</Button>                    
+            <Button onClick={()=>{close!()}} type="text" block icon={<Plus size={14} />} styles={{root:btnRootStyle}}>{intl.formatMessage({id:"brand.popover.create"})}</Button>                    
         </div>
     )
 }
